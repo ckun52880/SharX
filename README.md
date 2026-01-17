@@ -19,13 +19,9 @@ Welcome to the next generation of 3x-ui! This version brings significant improve
 
 ## Quick Start / Быстрый старт
 
-### 🚀 One-Line Install / Установка одной командой
+### 🚀 One-Line Install / Установка 
 
-```bash
-bash <(curl -Ls https://raw.githubusercontent.com/konstpic/3x-ui-new/main/install.sh)
-```
-
-Or clone and run / Или клонируйте и запустите:
+Клонируйте и запустите:
 
 ```bash
 git clone https://github.com/konstpic/3x-ui-new.git
