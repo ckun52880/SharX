@@ -23,18 +23,14 @@ This version brings significant improvements, a modern architecture, streamlined
 
 ## Quick Start / Быстрый старт
 
-### 🚀 One-Line Install / Установка одной командой
+### 🚀 Install / Установка 
+
+Клонируйте и запустите:
 
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/konstpic/3x-ui-new/main/install.sh)
-```
-
-Or clone and run / Или клонируйте и запустите:
-
-```bash
-git clone https://github.com/konstpic/3x-ui-new.git
-cd 3x-ui-new
-sudo ./install.sh
+git clone https://github.com/konstpic/SharX.git
+cd SharX
+sudo bash install.sh
 ```
 
 ---
@@ -111,8 +107,8 @@ sudo ./install.sh
 
 1. **Clone the repository / Клонируйте репозиторий:**
    ```bash
-   git clone https://github.com/konstpic/3x-ui-new.git
-   cd 3x-ui-new
+   git clone https://github.com/konstpic/SharX.git
+   cd SharX
    ```
 
 2. **Configure `docker-compose.yml` / Настройте `docker-compose.yml`:**
