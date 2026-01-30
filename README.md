@@ -30,7 +30,7 @@ This version brings significant improvements, a modern architecture, streamlined
 ```bash
 git clone https://github.com/konstpic/SharX.git
 cd SharX
-sudo bash install.sh
+sudo bash ./install_ru.sh
 ```
 
 ---
