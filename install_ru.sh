@@ -9,13 +9,15 @@
 set -e
 
 # Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
+RED='\e[38;2;255;0;0m'
+GREEN='\e[38;2;0;255;0m'
 YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
+SKYBLUE='\033[0;34m'
 PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
+CYAN='\e[38;2;135;206;235m'
 WHITE='\033[1;37m'
+ORANGE='\e[38;2;255;100;0m'
+LIME='\e[38;2;188;225;107m'
 NC='\033[0m' # No Color
 
 # Default values
@@ -49,7 +51,7 @@ print_banner() {
 }
 
 # Print colored message
-print_info() { echo -e "${BLUE}[ИНФО]${NC} $1"; }
+print_info() { echo -e "${SKYBLUE}[ИНФО]${NC} $1"; }
 print_success() { echo -e "${GREEN}[УСПЕХ]${NC} $1"; }
 print_warning() { echo -e "${YELLOW}[ПРЕДУПРЕЖДЕНИЕ]${NC} $1"; }
 print_error() { echo -e "${RED}[ОШИБКА]${NC} $1"; }
@@ -889,7 +891,7 @@ prompt_and_setup_ssl() {
     echo -e "${GREEN}1.${NC} Let's Encrypt for Domain (90-day validity, auto-renews)"
     echo -e "${GREEN}2.${NC} Let's Encrypt for IP Address (6-day validity, auto-renews)"
     echo -e "${GREEN}3.${NC} Пропустить настройку SSL (настроить позже)"
-    echo -e "${BLUE}Примечание:${NC} Оба варианта требуют открытый порт 80 для HTTP-01 проверки."
+    echo -e "${SKYBLUE}Примечание:${NC} Оба варианта требуют открытый порт 80 для HTTP-01 проверки."
     echo ""
     read -rp "Выберите опцию [1-3, по умолчанию: 2]: " ssl_choice
     ssl_choice="${ssl_choice:-2}"
@@ -3925,28 +3927,28 @@ main_menu() {
         echo -e "  ${YELLOW}15)${NC} Сбросить панель к настройкам по умолчанию"
         echo ""
         echo -e "  ${WHITE}── База данных ──${NC}"
-        echo -e "  ${PURPLE}17)${NC} Запустить базу данных"
-        echo -e "  ${PURPLE}18)${NC} Остановить базу данных"
-        echo -e "  ${PURPLE}19)${NC} Перезапустить базу данных"
-        echo -e "  ${PURPLE}20)${NC} Статус базы данных"
-        echo -e "  ${PURPLE}21)${NC} Создать резервную копию"
-        echo -e "  ${PURPLE}22)${NC} Восстановить из резервной копии"
+        echo -e "  ${ORANGE}17)${NC} Запустить базу данных"
+        echo -e "  ${ORANGE}18)${NC} Остановить базу данных"
+        echo -e "  ${ORANGE}19)${NC} Перезапустить базу данных"
+        echo -e "  ${ORANGE}20)${NC} Статус базы данных"
+        echo -e "  ${ORANGE}21)${NC} Создать резервную копию"
+        echo -e "  ${ORANGE}22)${NC} Восстановить из резервной копии"
         echo ""
         echo -e "  ${WHITE}── Информация ──${NC}"
         echo -e "  ${CYAN}23)${NC} Инструкции"
         echo ""
         echo -e "  ${WHITE}── Узел ──${NC}"
-        echo -e "  ${BLUE}30)${NC} Установить узел"
-        echo -e "  ${BLUE}31)${NC} Обновить узел"
-        echo -e "  ${BLUE}32)${NC} Запустить узел"
-        echo -e "  ${BLUE}33)${NC} Остановить узел"
-        echo -e "  ${BLUE}34)${NC} Перезапустить узел"
-        echo -e "  ${BLUE}35)${NC} Статус узла"
-        echo -e "  ${BLUE}36)${NC} Логи узла"
-        echo -e "  ${BLUE}37)${NC} Обновить сертификат узла"
-        echo -e "  ${BLUE}38)${NC} Добавить порт узла"
-        echo -e "  ${BLUE}39)${NC} Удалить порт узла"
-        echo -e "  ${BLUE}40)${NC} Сбросить узел"
+        echo -e "  ${LIME}30)${NC} Установить узел"
+        echo -e "  ${LIME}31)${NC} Обновить узел"
+        echo -e "  ${LIME}32)${NC} Запустить узел"
+        echo -e "  ${LIME}33)${NC} Остановить узел"
+        echo -e "  ${LIME}34)${NC} Перезапустить узел"
+        echo -e "  ${LIME}35)${NC} Статус узла"
+        echo -e "  ${LIME}36)${NC} Логи узла"
+        echo -e "  ${LIME}37)${NC} Обновить сертификат узла"
+        echo -e "  ${LIME}38)${NC} Добавить порт узла"
+        echo -e "  ${LIME}39)${NC} Удалить порт узла"
+        echo -e "  ${LIME}40)${NC} Сбросить узел"
         echo ""
         echo -e "  ${RED}99)${NC} Удалить панель"
         echo -e "  ${WHITE}0)${NC}  Выход"
@@ -4070,7 +4072,7 @@ main() {
                 echo -e "${WHITE}Что вы хотите установить?${NC}"
                 echo ""
                 echo -e "  ${GREEN}1)${NC} Установить панель (с базой данных)"
-                echo -e "  ${BLUE}2)${NC} Установить узел (автономный)"
+                echo -e "  ${LIME}2)${NC} Установить узел (автономный)"
                 echo -e "  ${YELLOW}3)${NC} Открыть меню"
                 echo -e "  ${WHITE}0)${NC} Выход"
                 echo ""
