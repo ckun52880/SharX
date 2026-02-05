@@ -32,14 +32,33 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 EOF
-echo "\e[38;2;0;255;255m--- Укажите логин для внешнего прокси: ---\e[0m"
-read login
+
+while true; do
+	read -p "Укажите логин для внешнего прокси: " login
+	if [ -z "$login" ]; then
+		echo "\e[91mНе может быть пустым!\e[0m"
+	continue
+	fi
+	break
+done
 sed -i 's/PROXY_USER/'$login'/g' /etc/systemd/system/gost.service
-echo "\e[38;2;0;255;255m--- Укажите пароль для внешнего прокси: ---\e[0m"
-read password
+while true; do
+        read -p "Укажите пароль для внешнего прокси: " password
+	if [ -z "$password" ]; then
+		echo "\e[91mНе может быть пустым!\e[0m"
+	continue
+	fi
+	break
+done
 sed -i 's/PROXY_PASS/'$password'/g' /etc/systemd/system/gost.service
-echo "\e[38;2;0;255;255m--- Укажите внешний порт прокси: ---\e[0m"
-read port
+while true; do
+	read -p "Укажите внешний порт прокси: " port
+	if [ -z "$port" ]; then
+		echo "\e[91mНе может быть пустым!\e[0m"
+	continue
+	fi
+	break
+done
 sed -i 's/PROXY_PORT/'$port'/g' /etc/systemd/system/gost.service /etc/systemd/system/gost.service
 sudo systemctl daemon-reload
 sudo systemctl enable --now gost
