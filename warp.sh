@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Настройки (измени под себя)
-#PROXY_USER="admin"
-#PROXY_PASS="passadmin"
-#PROXY_PORT="8080"
-
 echo "\e[38;2;0;255;255m--- 1. Установка Cloudflare WARP ---\e[0m"
 curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
@@ -66,10 +61,5 @@ curl -x socks5h://127.0.0.1:4000 https://www.cloudflare.com/cdn-cgi/trace
     echo "	127.0.0.1:4000"
     echo "-----------------------------------------------------------------"
     echo "\e[0m"
-#    echo "\e[38;2;0;255;255m-----------------------------------------------------------------\e[0m"
-#    echo "	Для смены логина и пароля отредактируйте"
-#    echo "	/etc/systemd/system/gost.service и перезапустите службы"
-#    echo "	\e[91msystemctl daemon-reload\e[0m"
-#    echo "	\e[91msystemctl restart gost.service\e[0m"
-#    echo "\e[38;2;0;255;255m-----------------------------------------------------------------\e[0m"
+    
 
