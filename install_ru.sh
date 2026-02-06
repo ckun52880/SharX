@@ -2165,7 +2165,7 @@ remove_node_port() {
 # END NODE FUNCTIONS
 # ============================================
 # Warp install
-warp_install{} {
+warp_install() {
     echo -e "\e[38;2;0;255;255m--- 1. Установка Cloudflare WARP ---\e[0m"
 curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
